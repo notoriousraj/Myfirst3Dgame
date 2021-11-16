@@ -9,8 +9,8 @@ public class coin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angelrotation = rotatespeed * Time.deltaTime;
-        transform.Rotate(Vector3.up * angelrotation  , Space.World);
+       
+        transform.Rotate(Vector3.up ,rotatespeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
