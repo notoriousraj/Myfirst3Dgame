@@ -13,6 +13,8 @@ public class player : MonoBehaviour
 
     public int score;
 
+    public UI ui;
+
     // Update is called once per frame
     void Update()
     {
@@ -57,5 +59,6 @@ public class player : MonoBehaviour
     public void Addscore(int amount)
     {
         score += amount;
+        ui.setscoretext(score);
     }
 }
