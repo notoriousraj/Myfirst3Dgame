@@ -61,6 +61,8 @@ MonoBehaviour:
   speed: 2
   movedirection: {x: 0, y: 0, z: 0}
   movedistance: 2
+  starttimebtwshot: 2
+  projectile: {fileID: 4099991250292264575, guid: 3d5a6df95dd1a0c4facf020b83719bb1, type: 3}
 --- !u!1001 &2462797328161086102
 PrefabInstance:
   m_ObjectHideFlags: 0

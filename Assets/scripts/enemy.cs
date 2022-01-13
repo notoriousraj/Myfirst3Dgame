@@ -11,10 +11,17 @@ public class enemy : MonoBehaviour
     Vector3 startpos;
     bool movingtostart;
 
+    //shooting
+    private float timebtwshot;
+    public float starttimebtwshot;
+
+    public GameObject projectile;
+
     // Start is called before the first frame update
     void Start()
     {
-        startpos = transform.position; 
+        startpos = transform.position;
+        timebtwshot = starttimebtwshot;
     }
 
     // Update is called once per frame
@@ -36,8 +43,20 @@ public class enemy : MonoBehaviour
                 movingtostart = true;
             }
         }
+
+        // shot 
+        if(timebtwshot <= 0)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
+            timebtwshot = starttimebtwshot;
+        }
+        else
+        {
+            timebtwshot -= Time.deltaTime;
+        }
     }
-    void OnTriggerEnter(Collider other)
+ 
+   void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
